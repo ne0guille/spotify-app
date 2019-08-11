@@ -1,12 +1,17 @@
 import React, { Fragment } from "react";
+import { Spin } from "antd";
 
-const SearchResult = ({ data = [], render }) => {  
+import './SearchResult.css';
+
+const SearchResult = ({ data = [], isLoading, render }) => {
   return (
     <Fragment>
-      {data.length > 0 && (
-        <ul className="search-results">
-          {render({ data })}
-        </ul>
+      {isLoading ? (
+        <Spin size="large" />
+      ) : (
+        data.length > 0 && (
+          <ul className="search-results">{render({ data })}</ul>
+        )
       )}
     </Fragment>
   );

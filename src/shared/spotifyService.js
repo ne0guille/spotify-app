@@ -31,7 +31,7 @@ class SpotifyService {
       return response;
     });
 
-    this.spotifyApi.setAccessToken("BQCZUhhGCH7iDobxJYneOU05AXAiTleMUGsrwOp4TllUCkF5EK6HhxUlH-zNbW2_h7mXPTZHZyTwxAHYAao");
+    this.spotifyApi.setAccessToken("BQDWGxAlzzzIW7Q6wpaWGcSVsdram6W-gU4--0SBmge5czIu8AggIO6cRPa6K6RwgHdMXjPUHDPe5wiJIns");
   }
 }
 

@@ -17,6 +17,6 @@ export const getTrackInfoFromSearch = ({ tracks = {} }) => {
 
 export const getArtistInfoFromSearch = ({ artists = {} }) => {
   const { items = [] } = artists;
-  return items.map(getRelatedInfo);
+  return items.map(({ name, id, images }) => ({ name, id, image: images[0] }));
 };
 

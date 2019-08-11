@@ -1,0 +1,16 @@
+.search-results{
+    background-color: white;
+    font-size: 1rem;    
+    max-height: 400px;
+    overflow: auto;
+}
+
+.artist {
+    display: flex;
+    justify-content: start;
+    padding: .5rem;
+}
+
+.artist .artist__img {
+    margin: 0 1rem;
+}
