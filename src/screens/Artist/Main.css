@@ -1,0 +1,10 @@
+
+
+.artist-container{
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.ant-page-header {
+    background-color: #778899bf !important;
+}

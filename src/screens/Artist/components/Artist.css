@@ -1,0 +1,20 @@
+.artist {
+    text-align: center;    
+    margin: 0 auto;
+}
+.artist__name {
+    font-size: 2rem;
+}
+.artist__image {
+    display: block;
+    border-radius: 50%;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+}
+
+.ant-carousel .slick-slide {
+    display: flex !important;
+    justify-content: space-around;
+    padding: 0.5rem 1rem;
+}

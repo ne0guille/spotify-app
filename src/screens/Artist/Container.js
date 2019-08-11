@@ -1,0 +1,21 @@
+import { connect, Dispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+
+import { getArtistById, getArtistAlbums } from "./data/actions";
+import { getAllArtists, getArtist } from "./data/selectors";
+
+import { Main } from "./Main";
+
+const mapStateToProps = ({ artist }, ownProps) => console.log('ownprops', ownProps) || ({
+  //artist: getArtist(artist),
+  artist: getArtist(artist, ownProps)
+});
+
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators({ getArtistById, getArtistAlbums }, dispatch)
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Main);
