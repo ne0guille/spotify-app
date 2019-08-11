@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Spin } from "antd";
+
 
 import ArtistResult from "./Results/ArtistResult";
 import TrackResult from "./Results/TrackResult";
@@ -19,13 +21,17 @@ const renderArtistResults = ({ data, history }) => (
 );
 const renderTracksResults = ({ data }) => <TrackResult data={data} />;
 
-export const Search = ({ actions, render }) => {
+export const Search = ({ actions, render, isLoading }) => {
   const [filter, setFilter] = useState(FILTER_ARTIST);
   const searchFunc = getSearchFunc(actions, filter);
   const renderResult = getResultComponent(filter);
   return (
     <div className="search">
-      {render({ filter, searchFunc, setFilter, renderResult })}
+      {isLoading ? (
+        <Spin size="large" />
+      ) : (
+        render({ filter, searchFunc, setFilter, renderResult })
+      )}
     </div>
   );
 };

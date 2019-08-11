@@ -10,7 +10,8 @@ import {
 const initialState = {
   data: [],
   error: undefined,
-  history: []
+  history: [],
+  isLoading: false
 };
 
 export default (state = initialState, action) => {
@@ -19,21 +20,22 @@ export default (state = initialState, action) => {
     case SEARCH_TRACKS_INIT:
       return {
         ...initialState,
+        isLoading: true,
         history: [action.payload, ...state.history]
       };
     case SEARCH_ARTIST_SUCCESS:
     case SEARCH_TRACKS_SUCCESS:
       return {
-        ...state,
-        // byId: action.payload.byId,
-        // allIds: action.payload.allIds,
+        ...state,        
         data: action.payload,
+        isLoading: false,
         error: undefined
       };
     case SEARCH_ARTIST_FAILURE:
     case SEARCH_TRACKS_FAILURE:
       return {
         ...state,
+        isLoading: false,
         error: action.error
       };
     default:
