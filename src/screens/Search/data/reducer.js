@@ -4,7 +4,8 @@ import {
   SEARCH_ARTIST_SUCCESS,
   SEARCH_TRACKS_INIT,
   SEARCH_TRACKS_FAILURE,
-  SEARCH_TRACKS_SUCCESS
+  SEARCH_TRACKS_SUCCESS,
+  SEARCH_FILTER_CHANGE
 } from "./actionTypes";
 
 const initialState = {
@@ -38,6 +39,12 @@ export default (state = initialState, action) => {
         isLoading: false,
         error: action.error
       };
+      case SEARCH_FILTER_CHANGE: {
+        return {
+          ...state,
+          data: []
+        }
+      }
     default:
       return state;
   }

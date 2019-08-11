@@ -8,9 +8,9 @@ import SearchResults from "./components/SearchResult";
 export const Main = ({ actions, tracks, history, isLoading }) => (
   <Search
     actions={actions}
-    render={({ filter, searchFunc, setFilter, renderResult }) => (
+    render={({ filter, searchFunc, onFilterChange, renderResult }) => (
       <div className="search-wrapper">
-        <SearchFilter filter={filter} onChange={setFilter} />
+        <SearchFilter filter={filter} onChange={onFilterChange} />
         <SearchInput filter={filter} onSearch={searchFunc} />
         <SearchResults
           data={tracks}

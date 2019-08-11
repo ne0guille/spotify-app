@@ -5,6 +5,7 @@ import { func, string } from "prop-types";
 const { Search } = Input;
 const SearchStyle = {
   width: "20rem",
+  height: "3rem",
   margin: "1rem auto",
   display: "block"
 };

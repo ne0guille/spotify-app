@@ -21,11 +21,17 @@ const renderTracksResults = ({ data }) => <TrackResult data={data} />;
 
 export const Search = ({ actions, render, isLoading }) => {
   const [filter, setFilter] = useState(FILTER_ARTIST);
+  const onFilterChange = (filter) => {
+    actions.filterChange();
+    return setFilter(filter);
+  }
   const searchFunc = getSearchFunc(actions, filter);
   const renderResult = getResultComponent(filter);
+
+  console.log('FIKTER', filter)
   return (
     <div className="search">
-       {render({ filter, searchFunc, setFilter, renderResult })}
+       {render({ filter, searchFunc, onFilterChange, renderResult })}
     </div>
   );
 };
