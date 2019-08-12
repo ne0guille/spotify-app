@@ -4,11 +4,11 @@ import { bindActionCreators } from "redux";
 import { Main } from "./Main";
 
 const mapStateToProps = ({ track }) => ({
-    track: track.selected,
-    isPlaying: track.isPlaying
+  track: track.selected,
+  isPlaying: track.isPlaying,
 });
 
 export default connect(
   mapStateToProps,
-  undefined,
+  undefined
 )(Main);

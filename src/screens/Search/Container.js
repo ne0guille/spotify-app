@@ -9,11 +9,14 @@ import { Main } from "./Main";
 
 const mapStateToProps = ({ search }) => ({
   tracks: getAllTracks(search),
-  isLoading: isSearching(search)
+  isLoading: isSearching(search),
 });
 
-const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators({ searchTracks, searchArtists, filterChange, playTrack }, dispatch)
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators(
+    { searchTracks, searchArtists, filterChange, playTrack },
+    dispatch
+  ),
 });
 
 export default connect(

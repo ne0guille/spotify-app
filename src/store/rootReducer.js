@@ -7,7 +7,7 @@ import track from "../screens/Tracks/data/reducer";
 const rootReducer = combineReducers({
   artist,
   search,
-  track
+  track,
 });
 
 export default rootReducer;

@@ -9,7 +9,7 @@ export const Albums = ({ data = [] }) => (
     <h2>Albums</h2>
     {!data.length && <p>No albums</p>}
     <Carousel autoplay {...settings}>
-      {data.map(album => (
+      {data.map((album) => (
         <Album key={album.id} {...album} />
       ))}
     </Carousel>

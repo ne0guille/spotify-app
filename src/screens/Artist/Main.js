@@ -4,7 +4,7 @@ import { Divider, Spin, PageHeader } from "antd";
 import { Artist } from "./components/Artist";
 import { Albums } from "./components/Albums";
 
-import './Main.css';
+import "./Main.css";
 
 export class Main extends Component {
   constructor(props) {
@@ -16,8 +16,8 @@ export class Main extends Component {
       actions: { getArtistById, getArtistAlbums },
       artist,
       match: {
-        params: { id }
-      }
+        params: { id },
+      },
     } = this.props;
 
     if (!artist && id) {
@@ -31,24 +31,24 @@ export class Main extends Component {
     console.log("albums", albums);
     return (
       <PageHeader
-      onBack={() => window.history.back()}
-      title={name}
-      subTitle={"Artist details"}>
-      <div className="page-container">
-        <section className="">
-        {!this.props.artist ? (
-          <Spin size="large" />
-        ) : (
-          <div className="artist-container">
-            <Artist name={name} image={image} followers={followers} />
-            <Divider />
-            <Albums data={albums} />
-          </div>
-        )}
-      </section>
-    </div>
-  </PageHeader>
-
+        onBack={() => window.history.back()}
+        title={name}
+        subTitle={"Artist details"}
+      >
+        <div className="page-container">
+          <section className="">
+            {!this.props.artist ? (
+              <Spin size="large" />
+            ) : (
+              <div className="artist-container">
+                <Artist name={name} image={image} followers={followers} />
+                <Divider />
+                <Albums data={albums} />
+              </div>
+            )}
+          </section>
+        </div>
+      </PageHeader>
     );
   }
 }

@@ -7,11 +7,11 @@ import { getArtist } from "./data/selectors";
 import { Main } from "./Main";
 
 const mapStateToProps = ({ artist }, ownProps) => ({
-  artist: getArtist(artist, ownProps)
+  artist: getArtist(artist, ownProps),
 });
 
-const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators({ getArtistById, getArtistAlbums }, dispatch)
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators({ getArtistById, getArtistAlbums }, dispatch),
 });
 
 export default connect(

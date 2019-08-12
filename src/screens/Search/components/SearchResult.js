@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Spin } from "antd";
 
-import './SearchResult.css';
+import "./SearchResult.css";
 
 const SearchResult = ({ data = [], isLoading, render }) => {
   return (

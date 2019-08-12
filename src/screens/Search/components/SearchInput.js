@@ -11,7 +11,7 @@ const SearchStyle = {
   fontSize: "24px",
 };
 export const SearchInput = ({ filter, onSearch }) => {
-  const onSearchClick = text => onSearch(text);
+  const onSearchClick = (text) => onSearch(text);
 
   return (
     <div>
@@ -26,5 +26,5 @@ export const SearchInput = ({ filter, onSearch }) => {
 
 Search.proptypes = {
   filter: string.isRequired,
-  onSearch: func.isRequired
+  onSearch: func.isRequired,
 };

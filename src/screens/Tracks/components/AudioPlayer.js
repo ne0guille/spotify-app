@@ -11,7 +11,9 @@ const AudioPlayer = ({ source, name }) => {
         <audio controls autoplay preload="auto">
           <source src={source} type="audio/mp3" />
         </audio>
-      ): <p>No track preview</p>}
+      ) : (
+        <p>No track preview</p>
+      )}
     </div>
   );
 };

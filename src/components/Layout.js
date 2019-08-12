@@ -4,7 +4,7 @@ import { Layout, Menu, Icon } from "antd";
 import Search from "../Search/Container";
 
 const Main = ({ children }) => {
-const { Header, Content, Footer, Sider } = Layout;
+  const { Header, Content, Footer, Sider } = Layout;
 
   return (
     <Layout>
@@ -21,7 +21,9 @@ const { Header, Content, Footer, Sider } = Layout;
         </Menu>
       </Sider> */}
       <Layout>
-        <Header style={{ background: "#fff", textAlign: 'center' }}>Spotify search app</Header>
+        <Header style={{ background: "#fff", textAlign: "center" }}>
+          Spotify search app
+        </Header>
         <Content style={{ margin: "24px 16px 0" }}>
           <div style={{ padding: 24, background: "#fff", minHeight: 360 }}>
             {children}

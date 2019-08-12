@@ -10,6 +10,6 @@ export const initialState = {
   search: {
     data: [],
     error: undefined,
-    history: []
-  }
+    history: [],
+  },
 };

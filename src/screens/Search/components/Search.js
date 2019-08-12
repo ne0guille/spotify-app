@@ -17,7 +17,9 @@ const getResultComponent = (filter, actions) =>
 const renderArtistResults = ({ data, history }) => (
   <ArtistResult data={data} history={history} />
 );
-const renderTracksResults = ({playTrack }) => ({ data }) => <TrackResult data={data} onClick={playTrack} />;
+const renderTracksResults = ({ playTrack }) => ({ data }) => (
+  <TrackResult data={data} onClick={playTrack} />
+);
 //TODO create context to consume actions from results comp
 
 export const Search = ({ actions, render, isLoading }) => {
@@ -25,13 +27,13 @@ export const Search = ({ actions, render, isLoading }) => {
   const onFilterChange = (filter) => {
     actions.filterChange();
     return setFilter(filter);
-  }
+  };
   const searchFunc = getSearchFunc(actions, filter);
   const renderResult = getResultComponent(filter, actions);
 
   return (
     <div className="search">
-       {render({ filter, searchFunc, onFilterChange, renderResult })}
+      {render({ filter, searchFunc, onFilterChange, renderResult })}
     </div>
   );
 };

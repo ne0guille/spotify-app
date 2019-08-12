@@ -2,36 +2,38 @@ import * as SpotifyWebApi from "spotify-web-api-js";
 
 const data = {
   method: "POST",
-  headers:{
-    'Accept': 'application/json',
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-    'Authorization': 'Basic YzY2ZTY5MTcyY2JkNGQ0N2E2ZmVjZTcwMjJkYThmMTU6NDNlNmY4ZWE1ZjZmNGMxMGE5ZTBmOTZiMDBjMmQ2OTM='
+  headers: {
+    Accept: "application/json",
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+    Authorization:
+      "Basic YzY2ZTY5MTcyY2JkNGQ0N2E2ZmVjZTcwMjJkYThmMTU6NDNlNmY4ZWE1ZjZmNGMxMGE5ZTBmOTZiMDBjMmQ2OTM=",
   },
   data: {
-    grant_type: 'client_credentials',// 'authorization_code',//"client_credentials",
-  }
-  // code: "YzY2ZTY5MTcyY2JkNGQ0N2E2ZmVjZTcwMjJkYThmMTU6NDNlNmY4ZWE1ZjZmNGMxMGE5ZTBmOTZiMDBjMmQ2OTM="
+    grant_type: "client_credentials", // 'authorization_code'
+  },
 };
 
 class SpotifyService {
   spotifyApi;
   constructor() {
-    console.log('constructor', new SpotifyWebApi().search)
+    console.log("constructor", new SpotifyWebApi().search);
     this.spotifyApi = new SpotifyWebApi();
     this.getToken();
   }
   getToken() {
     // let token = localStorage.getItem("authToken");
     const token = fetch("https://accounts.spotify.com/api/token", {
-      ...data
+      ...data,
     }).then((response: any) => {
       console.log(response);
 
       return response;
     });
 
-    this.spotifyApi.setAccessToken("BQDWGxAlzzzIW7Q6wpaWGcSVsdram6W-gU4--0SBmge5czIu8AggIO6cRPa6K6RwgHdMXjPUHDPe5wiJIns");
+    this.spotifyApi.setAccessToken(
+      "BQCxkqahKN2TaZVmfoE4-sdZNFAOGkU7BKCKoTKXdilnU86SzJMFIscvWFNvgpSYvP2IZE7AWx6s7H1d_lw"
+    );
   }
 }
 

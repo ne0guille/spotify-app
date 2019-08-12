@@ -1,8 +1,8 @@
-import { TRACK_PLAY_INIT, TRACK_PLAY_STOP } from './actionTypes';
+import { TRACK_PLAY_INIT, TRACK_PLAY_STOP } from "./actionTypes";
 
 const initialState = {
-   selected: {},
-   isPlaying: false   
+  selected: {},
+  isPlaying: false,
 };
 
 export default (state = initialState, action) => {
@@ -11,7 +11,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         selected: action.payload,
-        isPlaying: true        
+        isPlaying: true,
       };
     case TRACK_PLAY_STOP:
       return {
@@ -20,4 +20,4 @@ export default (state = initialState, action) => {
     default:
       return state;
   }
-}
+};
