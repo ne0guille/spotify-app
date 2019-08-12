@@ -3,14 +3,17 @@ import React from "react";
 
 //track selector to get urls
 const Track = ({ name, duration, album, artists, onClick, ...props }) => {
+  const albumName = album && album.name;
+
   return (
     <li className="track">
-      <a className="track__name" onClick={onClick({ name, ...props })}>
+      <h3><a className="track__name" onClick={onClick({ name, ...props })}>
         {name}
       </a>
-      <div className="track__artits">{/* <a>{artists}</a> */}</div>
-      <div className="track__album">{/* <a>{album}</a> */}</div>
-      <div className="track__duration">{duration}</div>
+      </h3>
+      {/* TODO add a on artis to route */}
+      {/* <div className="track__artists"></div> */}
+      <div className="track__info"><strong>{artists}</strong>- {albumName} - {duration}</div>
     </li>
   );
 };

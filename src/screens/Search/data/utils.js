@@ -11,7 +11,7 @@ export const getTrackInfoFromSearch = ({ tracks = {} }) => {
   return items.map(
     ({ album, artists, duration_ms, name, id, preview_url }) => ({
       album: getRelatedInfo(album),
-      artists: artists.map(getRelatedInfo),
+      artists: artists.map(({ name }) => name).join(','),
       duration: convertMsToMinutes(duration_ms),
       source: preview_url,
       name,
