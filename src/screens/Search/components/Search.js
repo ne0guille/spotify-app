@@ -11,13 +11,14 @@ const getSearchFunc = (actions, filter) => {
   return search;
 };
 
-const getResultComponent = filter =>
-  filter === FILTER_ARTIST ? renderArtistResults : renderTracksResults;
+const getResultComponent = (filter, actions) =>
+  filter === FILTER_ARTIST ? renderArtistResults : renderTracksResults(actions);
 
 const renderArtistResults = ({ data, history }) => (
   <ArtistResult data={data} history={history} />
 );
-const renderTracksResults = ({ data }) => <TrackResult data={data} />;
+const renderTracksResults = ({playTrack }) => ({ data }) => <TrackResult data={data} onClick={playTrack} />;
+//TODO create context to consume actions from results comp
 
 export const Search = ({ actions, render, isLoading }) => {
   const [filter, setFilter] = useState(FILTER_ARTIST);
@@ -26,9 +27,8 @@ export const Search = ({ actions, render, isLoading }) => {
     return setFilter(filter);
   }
   const searchFunc = getSearchFunc(actions, filter);
-  const renderResult = getResultComponent(filter);
+  const renderResult = getResultComponent(filter, actions);
 
-  console.log('FIKTER', filter)
   return (
     <div className="search">
        {render({ filter, searchFunc, onFilterChange, renderResult })}

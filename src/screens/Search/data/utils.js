@@ -6,10 +6,11 @@ const getRelatedInfo = ({ name, id }) => ({ name, id })
 
 export const getTrackInfoFromSearch = ({ tracks = {} }) => {
   const { items = [] } = tracks;
-  return items.map(({ album, artists, duration_ms, name, id }) => ({
+  return items.map(({ album, artists, duration_ms, name, id, preview_url }) => ({
     album: getRelatedInfo(album),
     artists: artists.map(getRelatedInfo),
     duration: convertMsToMinutes(duration_ms),
+    source: preview_url,
     name,
     id
   }));

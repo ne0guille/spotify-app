@@ -3,6 +3,7 @@ import { bindActionCreators } from "redux";
 
 import { getAllTracks, isSearching } from "./data/selectors";
 import { searchArtists, searchTracks, filterChange } from "./data/actions";
+import { playTrack } from "../Tracks/data/actions";
 
 import { Main } from "./Main";
 
@@ -12,7 +13,7 @@ const mapStateToProps = ({ search }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators({ searchTracks, searchArtists, filterChange }, dispatch)
+  actions: bindActionCreators({ searchTracks, searchArtists, filterChange, playTrack }, dispatch)
 });
 
 export default connect(
