@@ -3,14 +3,12 @@
     font-size: 1rem;    
     max-height: 400px;
     overflow: auto;
+    border: 1px solid lightskyblue;
+    padding: .5rem 2rem;
+    max-width: 60vw;
+    margin: 0 auto;
 }
 
-.artist {
-    display: flex;
-    justify-content: start;
-    padding: .5rem;
-}
-
-.artist .artist__img {
-    margin: 0 1rem;
-}
+.search-results li {
+    border-bottom: 1px solid lightskyblue;
+  }

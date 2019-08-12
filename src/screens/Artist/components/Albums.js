@@ -7,6 +7,7 @@ const settings = { slidesToShow: 3, dots: false };
 export const Albums = ({ data = [] }) => (
   <section>
     <h2>Albums</h2>
+    {!data.length && <p>No albums</p>}
     <Carousel autoplay {...settings}>
       {data.map(album => (
         <Album key={album.id} {...album} />

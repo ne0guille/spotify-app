@@ -7,10 +7,11 @@ const SearchStyle = {
   width: "20rem",
   height: "3rem",
   margin: "1rem auto",
-  display: "block"
+  display: "block",
+  fontSize: "24px",
 };
 export const SearchInput = ({ filter, onSearch }) => {
-  const onSearchClick = text => console.log(text) || onSearch(text);
+  const onSearchClick = text => onSearch(text);
 
   return (
     <div>

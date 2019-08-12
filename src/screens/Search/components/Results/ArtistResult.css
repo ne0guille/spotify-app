@@ -1,0 +1,14 @@
+.search-results__artist{
+    border-bottom: '1px solid #e8e8e8';
+    display: flex;
+    justify-content: start;
+    padding: .5rem;
+}
+ 
+.search-results__artist a{
+    line-height: 2rem;
+}
+
+.search-results__artist .artist__img {
+    margin: 0 1rem;
+}

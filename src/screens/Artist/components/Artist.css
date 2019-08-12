@@ -1,7 +1,9 @@
 .artist {
     text-align: center;    
     margin: 0 auto;
+    max-width: 50vw;
 }
+
 .artist__name {
     font-size: 2rem;
 }

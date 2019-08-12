@@ -6,7 +6,7 @@ import { getArtist } from "./data/selectors";
 
 import { Main } from "./Main";
 
-const mapStateToProps = ({ artist }, ownProps) => console.log('ownprops', ownProps) || ({
+const mapStateToProps = ({ artist }, ownProps) => ({
   artist: getArtist(artist, ownProps)
 });
 
