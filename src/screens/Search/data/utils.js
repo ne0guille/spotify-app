@@ -1,5 +1,7 @@
+import * as moment from 'moment';
+
 const convertMsToMinutes = (ms) => {
-  return ms;
+  return moment(ms).format('mm:ss');
 };
 
 const getRelatedInfo = ({ name, id }) => ({ name, id });
