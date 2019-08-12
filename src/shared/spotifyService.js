@@ -32,7 +32,7 @@ class SpotifyService {
     });
 
     this.spotifyApi.setAccessToken(
-      "BQCxkqahKN2TaZVmfoE4-sdZNFAOGkU7BKCKoTKXdilnU86SzJMFIscvWFNvgpSYvP2IZE7AWx6s7H1d_lw"
+      "BQCzmEc7vwz9uiLY1I5OcLMvDQhddozF87KuKJsfqyB0-0uhK45AbJ8D-vKtlTOnCJhJvK3sppxL6uks9bk"
     );
   }
 }
