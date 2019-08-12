@@ -1,13 +1,11 @@
 import React, { Fragment } from "react";
-
 import { Avatar } from 'antd';
 
-const ArtistStyle = {
-  borderBottom: '1px solid #e8e8e8'
-}
+import './ArtistResult.css';
+
 const Artist = ({ name, id, image = {}, onClick }) => {
   return (
-    <li style={ArtistStyle} className="artist">
+    <li className="search-results__artist">
       <Avatar className="artist__img" src={image.url}/>
       <a onClick={onClick(id)}>
         {name}
@@ -21,7 +19,7 @@ const SearchArtistResult = ({ data = [], history }) => {
  const onArtistClick = id => e => history.push(`/artist/${id}`);
   return (
     <Fragment>
-      {data.map(({ name, id, image }) => console.log('image', image) ||  (
+      {data.map(({ name, id, image }) => (
         <Artist
           key={`artist-${id}`}
           id={id}

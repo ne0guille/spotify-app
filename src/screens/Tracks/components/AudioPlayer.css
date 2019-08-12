@@ -1,0 +1,10 @@
+.audio-player audio {
+    display: block;
+    margin: .5rem auto;
+    width: 80vw;    
+}
+
+.audio-player .audio-player__track, p {
+ color: white;
+ text-align: center;
+}

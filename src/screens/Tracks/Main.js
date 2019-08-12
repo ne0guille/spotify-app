@@ -1,19 +1,10 @@
-// import React, { useState, userEffect } from 'react';
+import React from "react";
 
-// import { Artist } from './components/Artist';
+import AudioPlayer from "./components/AudioPlayer";
 
-// const getArtistEffect = (id, fetchArtist) => {
-//     useEffect(() => {
-//         if(id) fetchArtist(id);
-//     }, [id]);
-// }
-
-// export const Main = ({ artistId, artist, actions }) => {
-
-//     return (
-
-//         <div>
-//             <Artist data={artist} />
-//         </div>
-//     )
-// }
+export const Main = ({track = {}, isPlaying}) => {
+    const { name, source } = track;
+    return (
+        <AudioPlayer name={name} source={source} />
+    )
+}    

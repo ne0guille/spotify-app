@@ -1,61 +1,24 @@
 import {
-  FETCH_TRACK_INIT,
-  FETCH_TRACK_SUCCESS,
-  FETCH_TRACK_FAILURE,
-  SEARCH_TRACK_INIT,
-  SEARCH_TRACK_SUCCESS,
-  SEARCH_TRACK_FAILURE
+  TRACK_PLAY_INIT,
+  TRACK_PLAY_STOP
 } from "./actionTypes";
 
-import spotifyApi from "../../../shared/spotifyService";
 
-const fetchTrackInit = () => ({
-  type: FETCH_TRACK_INIT
-});
+const playTrackInit = track => ({
+  type: TRACK_PLAY_INIT,
+  payload: track
+})
 
-const fetchTrackSuccess = payload => ({
-  type: FETCH_TRACK_SUCCESS,
-  payload
-});
+const stopTrackInit = () => ({
+  type: TRACK_PLAY_STOP,
+})
 
-const getTrackById = id => dispatch => {
-  dispatch(fetchTrackInit());
+export const playTrack = track => dispatch => {
+  dispatch(playTrackInit(track));
+}
 
-  return spotifyApi
-    .getTrack(id)
-    .then(response => dispatch(fetchTrackSuccess(response)))
-    .catch(err => {
-      console.log(err);
-      dispatch({
-        type: FETCH_TRACK_FAILURE,
-        err
-      });
-    });
-};
+export const stopTrack = track => dispatch => {
+  dispatch(stopTrackInit(track));
+}
 
-const searchTrackInit = payload => ({
-  type: SEARCH_TRACK_INIT,
-  payload
-});
 
-const searchTrackSuccess = payload => ({
-  type: SEARCH_TRACK_SUCCESS,
-  payload
-});
-
-const searchTracks = name => dispatch => {
-  dispatch(searchTrackInit());
-
-  return spotifyApi
-    .searchTracks(name)
-    .then(response => dispatch(searchTrackSuccess(response)))
-    .catch(err => {
-      console.log(err);
-      dispatch({
-        type: SEARCH_TRACK_FAILURE,
-        err
-      });
-    });
-};
-
-export { searchTracks, getTrackById };

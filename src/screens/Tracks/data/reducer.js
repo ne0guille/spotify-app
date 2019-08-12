@@ -1,24 +1,21 @@
-import { FETCH_TRACK_SUCCESS, FETCH_TRACK_FAILURE } from '../actions/types';
+import { TRACK_PLAY_INIT, TRACK_PLAY_STOP } from './actionTypes';
 
 const initialState = {
-   byId: {},
-   allIds: [],  
-   error: undefined
+   selected: {},
+   isPlaying: false   
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_TRACK_SUCCESS:
+    case TRACK_PLAY_INIT:
       return {
         ...state,
-        byId: action.payload.byId,
-        allIds: action.payload.allIds,
-        error: undefined
+        selected: action.payload,
+        isPlaying: true        
       };
-    case FETCH_TRACK_FAILURE:
+    case TRACK_PLAY_STOP:
       return {
-        ...state,
-        error: action.error
+        ...initialState,
       };
     default:
       return state;

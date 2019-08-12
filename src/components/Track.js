@@ -2,10 +2,10 @@ import React from "react";
 // import { func } from "prop-types";
 
 //track selector to get urls
-const Track = ({ name, duration, album, artists }) => {
+const Track = ({ name, duration, album, artists, onClick, ...props }) => {
   return (
     <li className="track">
-      <div className="track__name">{name}</div>
+      <a className="track__name" onClick={onClick({name, ...props})}>{name}</a>
       <div className="track__artits">
         {/* <a>{artists}</a> */}
       </div>
